@@ -1,0 +1,46 @@
+return { -- Highlight, edit, and navigate code
+  -- "nvim-treesitter/nvim-treesitter",
+  -- dependencies = {
+  --   "nvim-treesitter/nvim-treesitter-textobjects",
+  -- },
+  -- opts = {
+  --   ensure_installed = {
+  --     "bash",
+  --     "diff",
+  --     "html",
+  --     "lua",
+  --     "luadoc",
+  --     "markdown",
+  --     "vim",
+  --     "vimdoc",
+  --     "css",
+  --     "javascript",
+  --   },
+  --
+  --   highlight = {
+  --     enable = true,
+  --   },
+  --   indent = { enable = true },
+  --
+  --   textobjects = {
+  --     select = {
+  --       enable = true,
+  --       keymaps = {
+  --         -- You can use the capture groups defined in textobjects.scm
+  --         ["af"] = "@function.outer",
+  --         ["if"] = "@function.inner",
+  --       },
+  --     },
+  --   },
+  -- },
+  -- config = function(_, opts)
+  --   -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
+  --
+  --   -- Prefer git instead of curl in order to improve connectivity in some environments
+  --   require("nvim-treesitter.install").prefer_git = true
+  --   ---@diagnostic disable-next-line: missing-fields
+  --   require("nvim-treesitter.configs").setup(opts)
+  --
+  --   local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+  -- end,
+}

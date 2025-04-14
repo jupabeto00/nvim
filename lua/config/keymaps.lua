@@ -1,32 +1,20 @@
--- This file contains custom key mappings for Neovim.
-local leader = " "
+-- Keymaps are automatically loaded on the VeryLazy event
+-- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
+-- Add any additional keymaps here
 local vk = vim.keymap
 
 -- Position cursor at the middle of the screen after scrolling half page
 vk.set("n", "<C-d>", "<C-d>zz") -- Scroll down half a page and center the cursor
 vk.set("n", "<C-u>", "<C-u>zz") -- Scroll up half a page and center the cursor
 
--- Map Ctrl+b in insert mode to delete to the end of the word without leaving insert mode
-vk.set("i", "<C-b>", "<C-o>de")
-
--- Map Ctrl+c to escape from other modes
--- vk.set({ "i", "n", "v" }, "<C-c>", [[<C-\><C-n>]])
-
 -- Better ESC
 vk.set("i", "jj", "<ESC>")
-
--- Better close window
-vk.set({ "i", "n", "v" }, "<leader>q", "<C-w>q", { desc = "Close Window" })
 
 -- Move on windows
 vk.set("n", "<C-j>", "<C-w>j")
 vk.set("n", "<C-h>", "<C-w>h")
 vk.set("n", "<C-l>", "<C-w>l")
 vk.set("n", "<C-k>", "<C-w>k")
-
--- Better split windows
-vk.set("n", "<leader>ws", "<C-w>s", { desc = "Split Horizontal" })
-vk.set("n", "<leader>wv", "<C-w>v", { desc = "Split Vertical" })
 
 -- Resize windows
 vk.set({ "n", "v" }, "<leader>wri", "<C-w>=", { desc = "Rezise all windows" })
@@ -37,12 +25,6 @@ vk.set({ "n", "v" }, "<leader>wrs", "<C-w>|", { desc = "Extend on Horizontal vie
 vk.set("v", "<", "<gv", { desc = "Indent left and keep selection" })
 vk.set("v", ">", ">gv", { desc = "Indent right and keep selection" })
 
------ LAZY -----
-vk.set("n", "<leader>l", "<CMD>Lazy<CR>", { desc = "Lazy" })
-
------ MASON -----
-vk.set("n", "<leader>m", "<CMD>Mason<CR>", { desc = "Mason" })
-
 ----- OBSIDIAN -----
 vk.set(
   "n",
@@ -50,13 +32,9 @@ vk.set(
   "<cmd>lua require('obsidian').util.toggle_checkbox()<CR>",
   { desc = "Obsidian Check Checkbox" }
 )
-vk.set("n", "<leader>ot", "<cmd>ObsidianTemplate<CR>", { desc = "Insert Obsidian Template" })
 vk.set("n", "<leader>oo", "<cmd>ObsidianOpen<CR>", { desc = "Open in Obsidian App" })
-vk.set("n", "<leader>ob", "<cmd>ObsidianBacklinks<CR>", { desc = "Show ObsidianBacklinks" })
+vk.set("n", "<leader>oc", "<cmd>ObsidianBacklinks<CR>", { desc = "Show ObsidianBacklinks" })
 vk.set("n", "<leader>ol", "<cmd>ObsidianLinks<CR>", { desc = "Show ObsidianLinks" })
-vk.set("n", "<leader>on", "<cmd>ObsidianNew<CR>", { desc = "Create New Note" })
-vk.set("n", "<leader>os", "<cmd>ObsidianSearch<CR>", { desc = "Search Obsidian" })
-vk.set("n", "<leader>oq", "<cmd>ObsidianQuickSwitch<CR>", { desc = "Quick Switch" })
 
 ----- OIL -----
 vk.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })

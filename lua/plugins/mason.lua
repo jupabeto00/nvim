@@ -1,17 +1,31 @@
 return {
-	"williamboman/mason.nvim",
-	opts = {
-		ui = {
-			icons = {
-			package_installed = "✓",
-			package_pending = "➜",
-			package_uninstalled = "✗"
-        }
-		},
-    ensure_installer = {
-      {
-        "stylua",
-      }
-    },
-	}
+  -- {
+  --   "williamboman/mason.nvim",
+  --   dependencies = {
+  --     { "WhoIsSethDaniel/mason-tool-installer.nvim" },
+  --   },
+  --   opts = {
+  --     ui = {
+  --       icons = {
+  --         package_installed = "✓",
+  --         package_pending = "➜",
+  --         package_uninstalled = "✗",
+  --       },
+  --     },
+  --   },
+  --
+  --   config = function()
+  --     require("mason").setup()
+  --
+  --     local ensure_installed = {}
+  --     vim.list_extend(ensure_installed, {
+  --       "stylua", -- Used to format Lua code
+  --       "prettier", -- Used to format markdown code
+  --     })
+  --
+  --     require("mason-tool-installer").setup({
+  --       ensure_installed = ensure_installed,
+  --     })
+  --   end,
+  -- },
 }
