@@ -27,6 +27,8 @@ require("lazy").setup({
 
     { import = "lazyvim.plugins.extras.editor.aerial" },
 
+    { import = "lazyvim.plugins.extras.lang.markdown" },
+
     -- import/override with your plugins
     { import = "plugins" },
   },

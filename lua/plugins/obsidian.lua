@@ -1,6 +1,7 @@
 local path = os.getenv("HOME") .. "/Documents/Nas/Obsidian"
 local wsPersonal = path .. "/vaults/personal"
 local wsWork = path .. "/vaults/work"
+
 local vaults = {
   {
     name = "personal",
@@ -67,16 +68,14 @@ return {
     { "<leader>ob", "<cmd>ObsidianMenu<cr>", desc = "Obsidian Menú" },
   },
   dependencies = {
-    "hrsh7th/nvim-cmp",
-    "nvim-lua/plenary.nvim",
-    "ibhagwan/fzf-lua",
+    { "nvim-lua/plenary.nvim" },
   },
   opts = {
     workspaces = vaults,
 
     --Completion settings
     completion = {
-      nvim_cmp = true,
+      blink = true,
       min_char = 2,
     },
   },
