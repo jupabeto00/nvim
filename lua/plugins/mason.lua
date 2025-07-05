@@ -1,48 +1,29 @@
--- lua/plugins/mason.lua
-
 return {
-  {
-    "mason-org/mason.nvim",
-    lazy = false,
-    opts = {
-      ensure_installed = {
-        "java-debug-adapter",
-        "java-test",
-        "jdtls",
-        "jsonls", -- json-lsp
-        "lua-language-server",
-        "markdown-toc",
-        "markdownlint-cli2",
-        "marksman",
-        "shfmt",
-        "stylua",
-      },
-    },
+  "williamboman/mason.nvim",
+  enabled = true,
+  dependencies = {
+    { "williamboman/mason-lspconfig.nvim", enabled = true },
+    { "WhoIsSethDaniel/mason-tool-installer.nvim", enabled = true },
   },
+  config = function()
+    require("mason").setup()
 
-  {
-    "mason-org/mason-lspconfig.nvim",
-    dependencies = { "mason-org/mason.nvim", "neovim/nvim-lspconfig" },
-    opts = {
+    -- You can add other tools here that you want Mason to install
+    -- for you, so that they are available from within Neovim.
+    local ensure_installed = {}
+    vim.list_extend(ensure_installed, {
+    "stylua", -- Used to format Lua code
+    })
+
+    require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
+
+    require("mason-lspconfig").setup({
       ensure_installed = {
-        "jdtls",
-        "jsonls",
         "lua_ls",
+        "ts_ls",
+        -- "pylsp",
+        "nil_ls",
       },
-      automatic_installation = true,
-    },
-  },
-
-  -- Opcional: para DAP de Java si usas nvim-dap
-  {
-    "mason-org/mason-nvim-dap.nvim",
-    dependencies = { "mason-org/mason.nvim", "mfussenegger/nvim-dap" },
-    opts = {
-      ensure_installed = {
-        "java-debug-adapter",
-        "java-test",
-      },
-      automatic_setup = true,
-    },
-  },
+    })
+  end,
 }

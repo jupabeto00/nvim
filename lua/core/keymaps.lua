@@ -1,6 +1,3 @@
--- Keymaps are automatically loaded on the VeryLazy event
--- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
--- Add any additional keymaps here
 local vk = vim.keymap
 
 -- Position cursor at the middle of the screen after scrolling half page
@@ -16,6 +13,10 @@ vk.set("n", "<C-h>", "<C-w>h")
 vk.set("n", "<C-l>", "<C-w>l")
 vk.set("n", "<C-k>", "<C-w>k")
 
+-- Split windos
+vk.set({ "n", "v" }, "<leader>|", "<C-w>v", { desc = "Split Vertical" })
+vk.set({ "n", "v" }, "<leader>-", "<C-w><C-s>", { desc = "Split Horizontal" })
+
 -- Resize windows
 vk.set({ "n", "v" }, "<leader>wri", "<C-w>=", { desc = "Rezise all windows" })
 vk.set({ "n", "v" }, "<leader>wrv", "<C-w>_", { desc = "Extend on Vertical view" })
@@ -25,19 +26,7 @@ vk.set({ "n", "v" }, "<leader>wrs", "<C-w>|", { desc = "Extend on Horizontal vie
 vk.set("v", "<", "<gv", { desc = "Indent left and keep selection" })
 vk.set("v", ">", ">gv", { desc = "Indent right and keep selection" })
 
------ OBSIDIAN -----
-vk.set(
-  "n",
-  "<leader>oc",
-  "<cmd>lua require('obsidian').util.toggle_checkbox()<CR>",
-  { desc = "Obsidian Check Checkbox" }
-)
-vk.set("n", "<leader>oo", "<cmd>ObsidianOpen<CR>", { desc = "Open in Obsidian App" })
-vk.set("n", "<leader>oc", "<cmd>ObsidianBacklinks<CR>", { desc = "Show ObsidianBacklinks" })
-vk.set("n", "<leader>ol", "<cmd>ObsidianLinks<CR>", { desc = "Show ObsidianLinks" })
-
------ OIL -----
-vk.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+vk.set("n", "-", "<CMD>Ex<CR>", { desc = "Open parent directory" })
 
 -- Delete all buffers but the current one
 vk.set(
@@ -84,4 +73,4 @@ function SaveFile()
   end
 end
 
-vk.set("n", "<leader>gt", ":GradleTestCurrentMethod<CR>", { desc = "Gradle Test Current Method" })
+-- vk.set("n", "<leader>gt", ":GradleTestCurrentMethod<CR>", { desc = "Gradle Test Current Method" })
