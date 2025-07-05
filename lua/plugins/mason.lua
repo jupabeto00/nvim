@@ -9,7 +9,7 @@ return {
         "java-debug-adapter",
         "java-test",
         "jdtls",
-        "jsonls", -- json-lsp
+        "json-lsp", -- json-lsp
         "lua-language-server",
         "markdown-toc",
         "markdownlint-cli2",
@@ -26,7 +26,7 @@ return {
     opts = {
       ensure_installed = {
         "jdtls",
-        "jsonls",
+        "json-lsp",
         "lua_ls",
       },
       automatic_installation = true,
@@ -35,7 +35,7 @@ return {
 
   -- Opcional: para DAP de Java si usas nvim-dap
   {
-    "mason-org/mason-nvim-dap.nvim",
+    "jay-babu/mason-nvim-dap.nvim",
     dependencies = { "mason-org/mason.nvim", "mfussenegger/nvim-dap" },
     opts = {
       ensure_installed = {
