@@ -25,19 +25,10 @@ vk.set({ "n", "v" }, "<leader>wrs", "<C-w>|", { desc = "Extend on Horizontal vie
 vk.set("v", "<", "<gv", { desc = "Indent left and keep selection" })
 vk.set("v", ">", ">gv", { desc = "Indent right and keep selection" })
 
------ OBSIDIAN -----
-vk.set(
-  "n",
-  "<leader>oc",
-  "<cmd>lua require('obsidian').util.toggle_checkbox()<CR>",
-  { desc = "Obsidian Check Checkbox" }
-)
-vk.set("n", "<leader>oo", "<cmd>ObsidianOpen<CR>", { desc = "Open in Obsidian App" })
-vk.set("n", "<leader>oc", "<cmd>ObsidianBacklinks<CR>", { desc = "Show ObsidianBacklinks" })
-vk.set("n", "<leader>ol", "<cmd>ObsidianLinks<CR>", { desc = "Show ObsidianLinks" })
-
------ OIL -----
-vk.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+----- Explorer -----
+vk.set("n", "-", function()
+  Snacks.explorer()
+end, { desc = "Open Explorer" })
 
 -- Delete all buffers but the current one
 vk.set(

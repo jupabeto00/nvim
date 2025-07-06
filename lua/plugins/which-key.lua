@@ -26,6 +26,7 @@ return {
       { "<leader>f", group = "[F]ind", icon = { icon = "󰱼" } },
       { "gs", group = "[S]urround", icon = { icon = "󰗅" } },
       { "<leader>g", group = "[G]it", icon = { icon = "" } },
+      { "<leader>j", group = "[J]ava", icon = { icon = "" } },
       { "<leader>o", group = "[O]bsidian", icon = { icon = "" } },
       { "<leader>q", group = "[Q]uit", icon = { icon = "󰈆" } },
       { "<leader>u", group = "[U]i", icon = { icon = "" } },

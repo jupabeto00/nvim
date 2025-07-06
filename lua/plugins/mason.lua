@@ -26,7 +26,7 @@ return {
     opts = {
       ensure_installed = {
         "jdtls",
-        "json-lsp",
+        "jsonls",
         "lua_ls",
       },
       automatic_installation = true,
