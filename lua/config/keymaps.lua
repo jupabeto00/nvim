@@ -74,5 +74,3 @@ function SaveFile()
     vim.notify("Error: " .. err, vim.log.levels.ERROR) -- Show the error message if it fails
   end
 end
-
-vk.set("n", "<leader>gt", ":GradleTestCurrentMethod<CR>", { desc = "Gradle Test Current Method" })
