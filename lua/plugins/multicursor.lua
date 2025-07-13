@@ -8,19 +8,19 @@ return {
     local set = vim.keymap.set
 
     -- Add or skip adding a new cursor by matching word/selection
-    set("n", "<C-n>", function()
+    set({ "n", "v" }, "<C-n>", function()
       mc.matchAddCursor(1)
     end)
-    set("n", "<C-m>", function()
+    set({ "n", "v" }, "<C-m>", function()
       mc.matchSkipCursor(1)
     end)
-    set("n", "<C-S-N>", function()
+    set({ "n", "v" }, "<C-S-N>", function()
       mc.matchAddCursor(-1)
     end)
-    set("n", "<C-S-M>", function()
+    set({ "n", "v" }, "<C-S-M>", function()
       mc.matchSkipCursor(-1)
     end)
-    set("n", "<C-a>", function()
+    set({ "n", "v" }, "<C-a>", function()
       mc.matchAllAddCursors()
     end)
 
