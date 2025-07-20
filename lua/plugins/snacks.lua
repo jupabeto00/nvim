@@ -5,6 +5,7 @@ return {
     lazy = false,
     ---@type snacks.Config
     opts = {
+      image = {},
       lazygit = {
         configure = true,
         win = { style = "lazygit" },
